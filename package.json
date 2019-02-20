@@ -1,0 +1,18 @@
+{
+  "name": "sassbootstrap",
+  "version": "1.0.0",
+  "description": "Sass Bootstrap Project",
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "build": "parcel  build ./src/index.html"
+  },
+  "author": "Ray Villalobos",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.3.1",
+    "parcel-bundler": "^1.11.0",
+    "popper.js": "^1.14.7",
+    "sass": "^1.17.0"
+  }
+}
