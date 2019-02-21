@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <title>{{ metadata.title }}</title>
+  </head>
+
+  <body data-spy="scroll" data-target=".site-nav" data-offset="55" style="position: relative">
+    {% include "navbar.njk" %}
+    {{ content | safe }}
+    <footer class="site-footer bg-reverse bg-dark">
+      {% include "social.njk" %}
+    </footer>
+    <script src="/js/script.js"></script>
+  </body>
+
+</html>

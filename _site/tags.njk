@@ -1,0 +1,21 @@
+---
+layout: layouts/page.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+renderData:
+  title: Tagged “{{ tag }}”
+permalink: /tags/{{ tag }}/
+---
+<p>See <a href="/tags/">all tags</a>.</p>
+<h2 class="text-secondary mb-5">Tagged <small>“{{ tag }}”</small></h2>
+
+{%- for item in collections[tag] | reverse %}
+  {% include "items.njk" %}
+{%- endfor %}

@@ -1,18 +1,55 @@
 {
-  "name": "sassbootstrap",
-  "version": "1.0.0",
-  "description": "Sass Bootstrap Project",
+  "name": "seventy",
+  "version": "1.0.3",
+  "description": "Blogging template for the 11ty.io static site generator.",
   "scripts": {
-    "start": "parcel ./src/index.html",
-    "build": "parcel  build ./src/index.html"
+    "start": "npm-run-all --parallel dev:del dev:sass-dev dev:webpack dev:eleventy",
+    "dev:del": "rimraf dist",
+    "dev:sass-dev": "node-sass --watch _process/scss/style.scss --output-style expanded --source-map true _process/scss/style.scss --output  _site/css/style.css",
+    "dev:eleventy": "eleventy --serve --quiet",
+    "dev:webpack": "webpack --watch",
+    "build": "run-s prod:*",
+    "prod:del": "rimraf build",
+    "prod:sass-dev": "node-sass --output-style compressed _process/scss/style.scss --output build/css",
+    "prod:webpack": "webpack --env.production --silent -p --optimize-minimize",
+    "prod:serve": "eleventy --output=./build"
   },
-  "author": "Ray Villalobos",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/planetoftheweb/seven.git"
+  },
+  "author": {
+    "name": "Ray Villalobos",
+    "email": "ray@planetoftheweb.com",
+    "url": "https://raybo.org/"
+  },
+  "license": "MIT",
   "devDependencies": {
+    "@11ty/eleventy": "^0.7.1",
+    "@11ty/eleventy-plugin-rss": "^1.0.5",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.1",
+    "@fortawesome/fontawesome-free": "^5.7.2",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^2.1.0",
+    "luxon": "^1.11.2",
+    "markdown-it": "^8.4.1",
+    "markdown-it-anchor": "^5.0.2",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "popper.js": "^1.14.7",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "vue-loader": "^15.6.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.6",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "animate.css": "^3.7.0",
     "bootstrap": "^4.3.1",
     "jquery": "^3.3.1",
-    "parcel-bundler": "^1.11.0",
-    "popper.js": "^1.14.7",
-    "sass": "^1.17.0"
+    "vue": "^2.6.6"
   }
 }
