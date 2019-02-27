@@ -3,7 +3,7 @@
   "version": "1.0.3",
   "description": "Blogging template for the 11ty.io static site generator.",
   "scripts": {
-    "start": "npm-run-all --parallel dev:del dev:sass-dev dev:webpack dev:eleventy",
+    "start": "npm-run-all --parallel dev:del dev:webpack dev:sass-dev dev:eleventy",
     "dev:del": "rimraf dist",
     "dev:sass-dev": "node-sass --watch _process/scss/style.scss --output-style expanded --source-map true --output _site/css",
     "dev:eleventy": "eleventy --serve --quiet",
