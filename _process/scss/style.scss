@@ -5,3 +5,22 @@
 
 @import '../../node_modules/animate.css/animate';
 @import '../prism/prism-xonokai';
+
+.h2,
+.h4 {
+  font-family: Asap;
+}
+
+.site-header {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.site-nav.inbody {
+  background: rgb(11, 114, 155);
+}
+
+.layout-social {
+  font-size: 1.4em;
+}
