@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
-title: "A JSON Tutorial. Getting started with JSON using JavaScript and jQuery"
-summary: "Javascript has grown from a way to add interactivity on your page, to a language that lets you perform tasks that once belonged to servers. JSON provides for an easy way to create and store data structures within JavaScript. It’s super popular and a great alternative to XML."
+title: 'A JSON Tutorial. Getting started with JSON using JavaScript and jQuery'
+summary: 'Javascript has grown from a way to add interactivity on your page, to a language that lets you perform tasks that once belonged to servers. JSON provides for an easy way to create and store data structures within JavaScript. It’s super popular and a great alternative to XML.'
 hero: /images/posts/json.png
 thumb: /images/posts/jsonarticle_tn.png
 tags:
@@ -12,13 +12,15 @@ tags:
   - python
 ---
 
+<button class="btn btn-special">Special</button>
+
 JSON stands for JavaScript Object Notation…it’s called that because storing data with JSON creates a JavaScript object. The JavaScript object can be easily parsed and manipulated with JavaScript.
 
 Where XML is arguably easier to read, but notoriously difficult to parse (describe to a computer), JSON makes it a breeze to store data in a format that machines dig. Once you encode the data with JSON, you can read it into a variable which creates an object. Really cool stuff. Let’s take a look.
 
 ```html
 <script>
-  var data = { firstName: "Ray" };
+  var data = { firstName: 'Ray' };
   alert(data.firstName);
 </script>
 ```
@@ -39,8 +41,8 @@ That’s great. Let’s go ahead and make it a bit more realistic by inserting o
 ```html
 <div id="placeholder"></div>
 <script>
-  var data = { firstName: "Ray" };
-  document.getElementById("placeholder").innerHTML = data.firstName;
+  var data = { firstName: 'Ray' };
+  document.getElementById('placeholder').innerHTML = data.firstName;
 </script>
 ```
 
@@ -58,23 +60,23 @@ What if we wanted to enter a bunch of people…then we have to add array notatio
   var data = {
     users: [
       {
-        firstName: "Ray",
-        lastName: "Villalobos",
+        firstName: 'Ray',
+        lastName: 'Villalobos',
         joined: 2012
       },
       {
-        firstName: "John",
-        lastName: "Jones",
+        firstName: 'John',
+        lastName: 'Jones',
         joined: 2010
       }
     ]
   };
 
-  document.getElementById("placeholder").innerHTML =
+  document.getElementById('placeholder').innerHTML =
     data.users[0].firstName +
-    " " +
+    ' ' +
     data.users[0].lastName +
-    " " +
+    ' ' +
     data.users[0].joined;
 </script>
 ```
@@ -91,19 +93,19 @@ Notice that we obviously had to change our code for inserting the name. We had t
   var data = {
     users: [
       {
-        firstName: "Ray",
-        lastName: "Villalobos",
+        firstName: 'Ray',
+        lastName: 'Villalobos',
         joined: {
-          month: "January",
+          month: 'January',
           day: 12,
           year: 2012
         }
       },
       {
-        firstName: "John",
-        lastName: "Jones",
+        firstName: 'John',
+        lastName: 'Jones',
         joined: {
-          month: "April",
+          month: 'April',
           day: 28,
           year: 2010
         }
@@ -111,11 +113,11 @@ Notice that we obviously had to change our code for inserting the name. We had t
     ]
   };
 
-  document.getElementById("placeholder").innerHTML =
+  document.getElementById('placeholder').innerHTML =
     data.users[0].firstName +
-    " " +
+    ' ' +
     data.users[0].lastName +
-    "--" +
+    '--' +
     data.users[0].joined.month;
 </script>
 ```
@@ -136,19 +138,19 @@ So, if we want to go through the user list, we could simply use JavaScript’s f
   var data = {
     users: [
       {
-        firstName: "Ray",
-        lastName: "Villalobos",
+        firstName: 'Ray',
+        lastName: 'Villalobos',
         joined: {
-          month: "January",
+          month: 'January',
           day: 12,
           year: 2012
         }
       },
       {
-        firstName: "John",
-        lastName: "Jones",
+        firstName: 'John',
+        lastName: 'Jones',
         joined: {
-          month: "April",
+          month: 'April',
           day: 28,
           year: 2010
         }
@@ -156,20 +158,20 @@ So, if we want to go through the user list, we could simply use JavaScript’s f
     ]
   };
 
-  var output = "<ul>";
+  var output = '<ul>';
   for (var i in data.users) {
     output +=
-      "<li>" +
+      '<li>' +
       data.users[i].firstName +
-      " " +
+      ' ' +
       data.users[i].lastName +
-      "--" +
+      '--' +
       data.users[i].joined.month +
-      "</li>";
+      '</li>';
   }
-  output += "</ul>";
+  output += '</ul>';
 
-  document.getElementById("placeholder").innerHTML = output;
+  document.getElementById('placeholder').innerHTML = output;
 </script>
 ```
 
@@ -192,21 +194,21 @@ It would be nice if we could store this on an external file and then just read e
     <div id="placeholder"></div>
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script>
-      $.getJSON("data.json", function(data) {
-        var output = "<ul>";
+      $.getJSON('data.json', function(data) {
+        var output = '<ul>';
         for (var i in data.users) {
           output +=
-            "<li>" +
+            '<li>' +
             data.users[i].firstName +
-            " " +
+            ' ' +
             data.users[i].lastName +
-            "--" +
+            '--' +
             data.users[i].joined.month +
-            "</li>";
+            '</li>';
         }
 
-        output += "</ul>";
-        document.getElementById("placeholder").innerHTML = output;
+        output += '</ul>';
+        document.getElementById('placeholder').innerHTML = output;
       });
     </script>
   </body>
