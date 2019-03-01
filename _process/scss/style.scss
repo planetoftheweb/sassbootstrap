@@ -6,6 +6,18 @@
 @import '../../node_modules/animate.css/animate';
 @import '../prism/prism-xonokai';
 
+.page-section-title {
+  @include font-size(5rem);
+}
+
+.page-section-text {
+  @include font-size(1.7rem);
+}
+
+.h2 {
+  @include font-size(2rem);
+}
+
 .site-header {
   background-position: center center;
   background-repeat: no-repeat;

@@ -6,6 +6,9 @@ $text-muted: #6c757d;
 $body-color: $text-muted;
 $border-radius: 8px;
 
+$enable-responsive-font-sizes: true;
+$rfs-base-font-size: 1rem;
+
 $theme-colors: (
   'special': #e01c55
 );
