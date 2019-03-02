@@ -14,3 +14,18 @@ $enable-shadows: true;
 $theme-colors: (
   'special': #e01c55
 );
+
+$spacer: 1rem;
+
+$spacers: (
+  6: (
+    $spacer * 8
+  ),
+  5: (
+    $spacer * 5
+  )
+);
+
+$sizes: (
+  33: 33%
+);
