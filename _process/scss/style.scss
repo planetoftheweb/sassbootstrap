@@ -25,9 +25,17 @@
 }
 
 .site-nav.inbody {
-  background: rgb(11, 114, 155);
+  background: $primary;
 }
 
 .layout-social {
   font-size: 1.4em;
+}
+
+a.text-primary:hover {
+  color: lighten(theme-color('primary'), 20%);
+}
+
+.list-group-item:hover {
+  background: $gray-700;
 }
