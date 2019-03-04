@@ -36,7 +36,7 @@
           <li class="list-group-item">
             <a :href="item.url" class="d-flex text-secondary">
               <span class="pr-2" v-html="item.icon"></span>
-              <span class="text-muted" v-html="item.title"></span>
+              <span v-html="item.title"></span>
             </a>
           </li>
         </ul>
