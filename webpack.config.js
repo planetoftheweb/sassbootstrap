@@ -1,34 +1,34 @@
-const path = require("path");
-const webpack = require("webpack");
-const { VueLoaderPlugin } = require("vue-loader");
+const path = require('path')
+const webpack = require('webpack')
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
-  mode: "development",
+  mode: 'development',
   watch: false,
-  entry: ["./_process/js/app.js", "./_process/js/script.js"],
+  entry: ['./_process/js/app.js', './_process/js/script.js'],
 
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   devServer: {
-    contentBase: "./dist"
+    contentBase: './dist',
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        use: "vue-loader"
+        use: 'vue-loader',
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      }
-    ]
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
   output: {
-    path: path.resolve(__dirname, "_site/js/"),
-    filename: "script.js"
+    path: path.resolve(__dirname, '_site/js/'),
+    filename: 'script.js',
   },
   plugins: [
-    new webpack.ProvidePlugin({ $: "jquery", jQuery: "jquery" }),
-    new VueLoaderPlugin()
-  ]
-};
+    new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery' }),
+    new VueLoaderPlugin(),
+  ],
+}
